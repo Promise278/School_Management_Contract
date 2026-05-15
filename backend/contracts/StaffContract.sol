@@ -25,19 +25,31 @@ contract StaffContract {
     ) external {
         require(!staffMap[wallet].active, "Already registered");
 
-        staff.push(Staff({ nextId++, name, role, salary, active: true, createdAt: block.timestamp }));
+        uint256 next = nextId;
+        nextId++;
 
-        staffMap[wallet] = staff[staff.length -1];
+        staff.push(
+            Staff({
+                staffId: nextId,
+                name: name,
+                role: role,
+                salary: salary,
+                active: true,
+                createdAt: block.timestamp
+            })
+        );
+
+        staffMap[wallet] = staff[staff.length - 1];
     }
 
-    function paySalary(address wallet) external onlyAdmin {
+    function paySalary(address wallet) external {
         Staff storage s = staffMap[wallet];
         require(s.active, "Not active");
         require(address(this).balance >= s.salary, "Insufficient balance");
         payable(wallet).transfer(s.salary);
     }
 
-    function markAttendance(address student) external onlyStaff {
+    function markAttendance(address student) external {
         attendance[msg.sender][student]++;
     }
 
@@ -55,9 +67,9 @@ contract StaffContract {
     }
 
     function getAttendance(
-        address staff,
+        address staffAddress,
         address student
     ) external view returns (uint256) {
-        return attendance[staff][student];
+        return attendance[staffAddress][student];
     }
 }
