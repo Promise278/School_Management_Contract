@@ -38,9 +38,7 @@ An ERC721 NFT contract for minting student identity NFTs.
 
 - Solidity
 - Hardhat
-- Ethers.js
 - OpenZeppelin Contracts
-- Chai
 
 ## Getting Started
 

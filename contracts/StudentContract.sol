@@ -22,7 +22,7 @@ contract StudentContract {
         require(bytes(name).length > 3, "Name too short");
         require(!studentMap[msg.sender].registered, "Already registered");
 
-        student.push(Student({ nextMatric++, name, age, registered: false, feesPaid: false, createdAt: block.timestamp }));
+        student.push(Student({ nextMatric++, name, age, registered: true, feesPaid: false, createdAt: block.timestamp }));
         studentMap[msg.sender] = students[students.length - 1];
     }
 
