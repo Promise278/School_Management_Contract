@@ -90,14 +90,6 @@ ignition/
     Lock.js
 ```
 
-## Future Improvements
-
-- Add admin access control to all management functions
-- Connect the student contract directly to the school token and NFT contracts
-- Add complete tests for student registration, staff registration, fee payment, and attendance
-- Add deployment scripts for all school management contracts
-- Build a frontend dashboard for admins, staff, and students
-
 ## License
 
 This project is licensed under the ISC License.
