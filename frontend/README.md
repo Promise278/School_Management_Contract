@@ -1,24 +1,37 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Local setup
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+cd school_management/frontend
+npm install
+```
+
+2. Add your contract addresses to `.env.local`:
+
+```bash
+NEXT_PUBLIC_STUDENT_CONTRACT_ADDRESS=0xYourStudentContractAddress
+NEXT_PUBLIC_STAFF_CONTRACT_ADDRESS=0xYourStaffContractAddress
+```
+
+3. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- MetaMask wallet connect
+- Student registration
+- School fee payment
+- Staff registration
+- Attendance recording
+- Real-time contract data and status
 
 ## Learn More
 
